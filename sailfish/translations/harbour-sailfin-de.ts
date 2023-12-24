@@ -135,7 +135,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/cover/CollectionPage.qml" line="124"/>
+        <location filename="../qml/cover/CollectionPage.qml" line="123"/>
         <source>Sailfin</source>
         <translation type="unfinished"></translation>
     </message>
@@ -428,27 +428,27 @@ Page title for the list of all artists within the music library</extracomment>
 <context>
     <name>PlaybackBar</name>
     <message>
-        <location filename="../qml/components/PlaybackBar.qml" line="129"/>
+        <location filename="../qml/components/PlaybackBar.qml" line="128"/>
         <source>No media selected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/components/PlaybackBar.qml" line="138"/>
+        <location filename="../qml/components/PlaybackBar.qml" line="137"/>
         <source>Play some media!</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/components/PlaybackBar.qml" line="153"/>
+        <location filename="../qml/components/PlaybackBar.qml" line="152"/>
         <source>No audio</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/components/PlaybackBar.qml" line="179"/>
+        <location filename="../qml/components/PlaybackBar.qml" line="178"/>
         <source>Shuffle not yet implemented</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/components/PlaybackBar.qml" line="455"/>
+        <location filename="../qml/components/PlaybackBar.qml" line="454"/>
         <source>Stop</source>
         <extracomment>Pulley menu item: stops playback of music</extracomment>
         <translation type="unfinished"></translation>
@@ -687,7 +687,7 @@ This is still an alpha version :)</source>
 <context>
     <name>harbour-sailfin</name>
     <message>
-        <location filename="../qml/harbour-sailfin.qml" line="99"/>
+        <location filename="../qml/harbour-sailfin.qml" line="98"/>
         <source>Sailfin</source>
         <extracomment>The application name for the notification</extracomment>
         <translation type="unfinished"></translation>

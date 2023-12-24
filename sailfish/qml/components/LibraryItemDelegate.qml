@@ -19,9 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 import QtQuick 2.6
 import Sailfish.Silica 1.0
 
-import ".."
-import "../Constants.qml" as Constants
-import "../Utils.js" as Utils
+import "../"
 /**
  * Delegate for displaying an item in the library.
  */

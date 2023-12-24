@@ -158,7 +158,9 @@ set(sailfin_QML_SOURCES
 	qml/pages/settings/StreamingPage.qml
 	qml/pages/setup/AddServerConnectingPage.qml
 	qml/pages/setup/AddServerPage.qml
-	qml/pages/setup/LoginDialog.qml)
+        qml/pages/setup/LoginDialog.qml
+        qml/qmldir
+        )
 	
 set(TRANSLATION_SOURCE_FILES
         ${harbour-sailfin_SOURCES}

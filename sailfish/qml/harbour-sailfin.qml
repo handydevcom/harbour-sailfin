@@ -36,7 +36,7 @@ ApplicationWindow {
     // The global mediaPlayer instance
     //readonly property MediaPlayer mediaPlayer: _mediaPlayer
     readonly property PlaybackManager playbackManager: _playbackManager
-    readonly property ApiClient apiClient: _apiClient
+    readonly property ApiClient   apiClient: _apiClient
 
     // Due QTBUG-10822, declarartions such as `property J.Item foo` are not possible.
     property var itemData: pageStack.currentPage.itemData
@@ -71,8 +71,7 @@ ApplicationWindow {
             }
         }
     }
-    cover: CoverBackground {CoverPlaceholder { icon.source: "icon.png"; text: "Sailfin"}}
-    /*cover: {
+    cover: {
         // Disabled due to buggy Loader behaviour
         if ([MediaPlayer.NoMedia, MediaPlayer.InvalidMedia, MediaPlayer.UnknownStatus].indexOf(_playbackManager.mediaStatus) >= 0
                  || _playbackManager.playbackState === MediaPlayer.StoppedState) {
@@ -80,7 +79,7 @@ ApplicationWindow {
         } else {
             return Qt.resolvedUrl("cover/NowPlayingCover.qml")
         }
-    }*/
+    }
 
     Notification {
         id: errorNotification
@@ -191,7 +190,7 @@ ApplicationWindow {
         id: loginAnimation
 
         PauseAnimation {
-            duration: 250
+            duration: 2000
         }
 
         ScriptAction {
