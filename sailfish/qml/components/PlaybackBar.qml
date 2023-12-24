@@ -24,6 +24,7 @@ import Sailfish.Silica 1.0
 import nl.netsoj.chris.Jellyfin 1.0 as J
 
 import "../"
+import "../Utils.js" as Utils
 
 /**
  *
@@ -67,10 +68,10 @@ PanelBackground {
                 top: parent.top
             }
             width: height
-            Binding on blurhash {
+            /*Binding on blurhash {
                 when: manager.item !== null && "Primary" in manager.item.imageBlurHashes && "Primary" in manager.item.imageTags
                 value: manager.item.imageBlurHashes["Primary"][manager.item.imageTags["Primary"]]
-            }
+            }*/
             source: largeAlbumArt.source
             fillMode: Image.PreserveAspectCrop
             opacity: 1

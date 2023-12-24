@@ -81,6 +81,9 @@ void JellyfinPlugin::registerTypes(const char *uri) {
     qmlRegisterType<ViewModel::PublicUsersLoader>(uri, 1, 0, "PublicUsersLoader");
     qmlRegisterType<ViewModel::AlbumArtistLoader>(uri, 1, 0, "AlbumArtistLoader");
 
+    qmlRegisterType<Jellyfin::ViewModel::PlatformMediaControl>(uri, 1, 0, "PlatformMediaControl");
+    qmlRegisterType<Jellyfin::ApiClient>(uri, 1, 0, "ApiClient");
+
     // Enumerations
     qmlRegisterUncreatableType<Jellyfin::DTO::GeneralCommandTypeClass>(uri, 1, 0, "GeneralCommandType", "Is an enum");
     qmlRegisterUncreatableType<Jellyfin::ViewModel::ModelStatusClass>(uri, 1, 0, "ModelStatus", "Is an enum");

@@ -71,8 +71,8 @@ ApplicationWindow {
             }
         }
     }
-    //cover: CoverBackground {CoverPlaceholder { icon.source: "icon.png"; text: "Sailfin"}}
-    cover: {
+    cover: CoverBackground {CoverPlaceholder { icon.source: "icon.png"; text: "Sailfin"}}
+    /*cover: {
         // Disabled due to buggy Loader behaviour
         if ([MediaPlayer.NoMedia, MediaPlayer.InvalidMedia, MediaPlayer.UnknownStatus].indexOf(_playbackManager.mediaStatus) >= 0
                  || _playbackManager.playbackState === MediaPlayer.StoppedState) {
@@ -80,7 +80,7 @@ ApplicationWindow {
         } else {
             return Qt.resolvedUrl("cover/NowPlayingCover.qml")
         }
-    }
+    }*/
 
     Notification {
         id: errorNotification
@@ -120,7 +120,7 @@ ApplicationWindow {
         target: pageStack
         onCurrentPageChanged: {
             if ("itemData" in pageStack.currentPage) {
-                appWindow.itemData =  pageStack.currentPage.itemData
+                appWindow.itemData = pageStack.currentPage.itemData
             } else {
                 appWindow.itemData = null
             }

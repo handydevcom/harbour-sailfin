@@ -1,3 +1,0 @@
-module SailfinStyle
-depends QtQuick.Controls 2.12
-

@@ -33,6 +33,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 #include <sailfishapp.h>
 
+#include "JellyfinQt/jellyfin.h"
+
 int main(int argc, char *argv[]) {
     //QQmlDebuggingEnabler enabler;
     //enabler.startTcpDebugServer(9999);
@@ -45,12 +47,16 @@ int main(int argc, char *argv[]) {
     //   - SailfishApp::pathToMainQml() to get a QUrl to the main QML file
     //
     // To display the view, call "show()" (will show fullscreen on device).
+
     QGuiApplication *app = SailfishApp::application(argc, argv);
     app->setOrganizationName("nl.netsoj.chris");
     app->setOrganizationDomain("nl.netsoj.chris");
     app->setApplicationName("Sailfin");
     //: Application display name
     app->setApplicationDisplayName(QObject::tr("Sailfin"));
+
+    Jellyfin::JellyfinPlugin plugin;
+    plugin.registerTypes("nl.netsoj.chris.Jellyfin");
 
     QCommandLineParser cmdParser;
     cmdParser.addHelpOption();

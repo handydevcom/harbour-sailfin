@@ -3,7 +3,8 @@ import Sailfish.Silica 1.0
 
 import nl.netsoj.chris.Jellyfin 1.0 as J
 
-import "../"
+import ".."
+import "../Utils.js" as Utils
 
 MoreSection {
     id: header

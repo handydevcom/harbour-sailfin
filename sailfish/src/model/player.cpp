@@ -81,7 +81,7 @@ QtMultimediaPlayerPrivate::QtMultimediaPlayerPrivate(QtMultimediaPlayer *q)
     q->connect(m_mediaPlayer, &QMediaPlayer::stateChanged, q, [q](QMediaPlayer::State /*newState*/){
         emit q->stateChanged(q->state());
     });
-    q->connect(m_mediaPlayer, &QMediaPlayer::mediaStatusChanged, q, [q, this](QMediaPlayer::MediaStatus newMediaStatus) {
+    q->connect(m_mediaPlayer, &QMediaPlayer::mediaStatusChanged, q, [q](QMediaPlayer::MediaStatus newMediaStatus) {
         emit q->mediaStatusChanged(q->mediaStatus());
     });
     q->connect(m_mediaPlayer, &QMediaPlayer::positionChanged, q, &QtMultimediaPlayer::positionChanged);

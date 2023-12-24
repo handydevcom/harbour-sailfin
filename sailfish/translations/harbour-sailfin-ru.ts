@@ -19,6 +19,10 @@
         <source>&lt;p&gt;&lt;b&gt;Sailfin version %1&lt;/b&gt;&lt;br/&gt;Copyright © Chris Josten 2020–%2&lt;/p&gt;&lt;p&gt;Sailfin is Free Software licensed under the &lt;a href=&apos;lgpl&apos;&gt;LGPL-v2.1&lt;/a&gt; or later, at your choice. Parts of the code of Sailfin are from other libraries. &lt;a href=&apos;3rdparty&apos;&gt;View their licenses here&lt;/a&gt;.&lt;/p&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>LGPL 2.1 License</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AddServerConnectingPage</name>
@@ -518,7 +522,7 @@ This is still an alpha version :)</source>
     <message>
         <source>Network error</source>
         <extracomment>Video playback error: network error</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ошибка сети</translation>
     </message>
     <message>
         <source>Access denied</source>
@@ -533,7 +537,7 @@ This is still an alpha version :)</source>
     <message>
         <source>Retry</source>
         <extracomment>Button to retry loading a video after a failure</extracomment>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Попробовать снова</translation>
     </message>
     <message>
         <source>No error</source>
