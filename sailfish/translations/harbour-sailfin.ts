@@ -135,7 +135,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../qml/cover/CollectionPage.qml" line="123"/>
+        <location filename="../qml/cover/CollectionPage.qml" line="124"/>
         <source>Sailfin</source>
         <translation type="unfinished"></translation>
     </message>

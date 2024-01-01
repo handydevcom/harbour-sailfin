@@ -49,7 +49,7 @@ void BaseModelLoader::componentComplete() {
 void BaseModelLoader::autoReloadIfNeeded() {
     if (m_autoReload && canReload()) {
         qCDebug(jellyfinApiModel) << "reloading due to 'autoReloadIfNeeded()'";
-        // emit reloadWanted();
+        emit reloadWanted();
     }
 }
 

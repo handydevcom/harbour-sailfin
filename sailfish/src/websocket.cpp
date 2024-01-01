@@ -53,6 +53,10 @@ void WebSocket::open() {
     query.addQueryItem("api_key", m_apiClient->token());
     query.addQueryItem("deviceId", m_apiClient->deviceId());
     QUrl connectionUrl(m_apiClient->baseUrl());
+    if(connectionUrl.scheme() == "https") {
+        // This doesn't work yet (exactly websocket hangs when connecting to a https server). Without it, it works all right.
+        return;
+    }
     connectionUrl.setScheme(connectionUrl.scheme() == "http" ? "ws" : "wss");
     connectionUrl.setPath("/socket");
     connectionUrl.setQuery(query);

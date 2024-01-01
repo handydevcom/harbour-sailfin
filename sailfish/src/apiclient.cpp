@@ -449,10 +449,10 @@ void ApiClient::defaultNetworkErrorHandler(QNetworkReply::NetworkError error) {
     QObject *signalSender = sender();
     QNetworkReply *rep = dynamic_cast<QNetworkReply *>(signalSender);
     if (rep != nullptr && statusCode(rep) == 401) {
-        this->setAuthenticated(false);
-        emit this->setupRequired();
-        emit this->authenticationError(ApiError::INVALID_PASSWORD);
-        rep->deleteLater();
+        //this->setAuthenticated(false);
+        //emit this->setupRequired();
+        //emit this->authenticationError(ApiError::INVALID_PASSWORD);
+        //rep->deleteLater();
     } else {
         emit this->networkError(error);
     }

@@ -22,6 +22,7 @@ import Sailfish.Silica 1.0
 import nl.netsoj.chris.Jellyfin 1.0 as J
 
 import "../components"
+import ".."
 
 CoverBackground {
     id: cover
