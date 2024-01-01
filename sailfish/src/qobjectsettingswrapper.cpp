@@ -158,7 +158,8 @@ void QObjectSettingsWrapper::setValue(const QString &key, const QVariant &value)
 }
 
 void QObjectSettingsWrapper::sync() {
-    // NOOP
+    Q_D(QObjectSettingsWrapper);
+    d->m_settings.sync();
 }
 
 void QObjectSettingsWrapper::clear() {
@@ -225,7 +226,7 @@ void QObjectSettingsWrapper::propertyChanged() {
 
 QObjectSettingsWrapperPrivate::QObjectSettingsWrapperPrivate(QObjectSettingsWrapper *parent)
     : q_ptr(parent),
-      m_settings(QSettings(parent)) {
+      m_settings(QSettings("Handydev", "Sailfin")) {
 
 }
 
@@ -241,11 +242,14 @@ void QObjectSettingsWrapperPrivate::resolveProperties(QByteArray scopePath) {
 
 void QObjectSettingsWrapperPrivate::readValue(const QMetaProperty &prop) {
     Q_Q(QObjectSettingsWrapper);
-    const QVariant value = m_settings.value(absolutePath + prop.name(), prop.type());
-    if (value.isValid()) {
-        notifyIndex = prop.notifySignalIndex();
-        prop.write(q, value);
-        notifyIndex = -1;
+    QString key = absolutePath + prop.name();
+    if(m_settings.contains(key)) {
+        const QVariant value = m_settings.value(key, prop.type());
+        if (value.isValid()) {
+            notifyIndex = prop.notifySignalIndex();
+            prop.write(q, value);
+            notifyIndex = -1;
+        }
     }
 }
 
