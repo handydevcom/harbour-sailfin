@@ -53,7 +53,7 @@ SilicaItem {
     property real aspectRatio: 1.0
     property string source: ""
     property alias sourceSize: realImage.sourceSize
-    property var fillMode: Image.Stretch
+    property int fillMode: Image.Stretch
     property int status: {
         if (!source) return Image.Null
         if (realImage.status == Image.Null && !_shouldLoad) return Image.Loading

@@ -32,7 +32,7 @@ CoverBackground {
     readonly property real bottomOffset: width - rowHeight
     readonly property bool onMainScreen: appWindow.itemData === null
     readonly property string itemId: appWindow.pageStack.currentPage.itemId
-    readonly property bool hasParent: !appWindow.itemData !== null && appWindow.itemData.jellyfinId.length !== 0
+    readonly property bool hasParent: appWindow.itemData !== null && appWindow.itemData.jellyfinId.length !== 0
 
     J.ItemModel {
         id: randomItems
@@ -93,7 +93,7 @@ CoverBackground {
                 source: model.jellyfinId
                             ? Utils.itemModelImageUrl(appWindow.apiClient.baseUrl, model.jellyfinId, model.imageTags["Primary"], "Primary", {"maxHeight": rowHeight})
                             : ""
-                blurhash: model.jellyfinId
+                blurhash: model.jellyfinId && model.imageBlurHashes["Primary"] !== undefined
                             ? model.imageBlurHashes["Primary"][model.imageTags["Primary"]]
                             : ""
                 fillMode: Image.PreserveAspectCrop

@@ -157,8 +157,6 @@ Page {
         if (force || (appWindow.apiClient.authenticated && !_modelsLoaded)) {
             _modelsLoaded = true;
             mediaLibraryModel.reload()
-            userResumeModel.reload()
-            showNextUpModel.reload()
         }
     }
 

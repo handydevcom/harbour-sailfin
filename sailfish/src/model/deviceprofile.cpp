@@ -53,8 +53,6 @@ int DeviceProfile::maxStreamingBitrate() {
 }
 
 DTO::DeviceProfile DeviceProfile::generateProfile() {
-    using JsonPair = QPair<QString, QJsonValue>;
-
     QStringList audioCodes = {
         "aac",
         "flac",

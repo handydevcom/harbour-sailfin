@@ -47,10 +47,10 @@ MoreSection {
             poster: Utils.itemModelImageUrl(appWindow.apiClient.baseUrl, model.jellyfinId, model.imageTags["Primary"], "Primary", {"height": height})
             Binding on blurhash {
                 when: poster != ""
-                value: model.imageBlurHashes["Primary"][model.imageTags["Primary"]]
+                value: model.imageBlurHashes["Primary"] === undefined ? undefined : model.imageBlurHashes["Primary"][model.imageTags["Primary"]]
             }
             landscape: !list.isPortrait
-            progress: (typeof model.userDataPlayedProgress !== 0.0) ? model.userDataPlayedPercentage / 100 : 0.0
+            progress: (model.userDataPlayedProgress !== 0.0) ? model.userDataPlayedPercentage / 100 : 0.0
 
             onClicked: {
                 appWindow.navigateToItem(model.jellyfinId, model.mediaType, model.type, model.isFolder);

@@ -152,7 +152,7 @@ BaseDetailPage {
     Connections {
         target: itemData
         onStatusChanged: {
-            if (itemData.status == JellyfinItem.Ready) {
+            if (itemData.status === JellyfinItem.Ready) {
                 episodeModel.reload()
             }
         }

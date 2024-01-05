@@ -233,7 +233,7 @@ BaseDetailPage {
                     model: albumsModel
 
                     LibraryItemDelegate {
-                        readonly property int _multiplier: index === 0 ? 2 : 1
+                        readonly property int _multiplier: (index === 0) ? 2 : 1
                         poster: Utils.itemModelImageUrl(appWindow.apiClient.baseUrl, model.jellyfinId, model.imageTags["Primary"], "Primary", {"height": height})
                         blurhash: model.imageBlurHashes["Primary"][model.imageTags["Primary"]]
                         title: model.name

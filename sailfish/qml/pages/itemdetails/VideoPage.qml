@@ -57,7 +57,7 @@ BaseDetailPage {
                 width: parent.width
                 imageSource: Utils.itemImageUrl(apiClient.baseUrl, itemData, "Primary", {"maxWidth": parent.width})
                 imageAspectRatio: Constants.horizontalVideoAspectRatio
-                imageBlurhash: itemData.imageBlurHashes["Primary"][itemData.imageTags["Primary"]]
+                imageBlurhash: (itemData === undefined || itemData.imageBlurHashes["Primary"] === undefined) ? "" : itemData.imageBlurHashes["Primary"][itemData.imageTags["Primary"]]
                 Binding on favourited {
                     when: _userdataReady
                     value: itemData.userData.favorite
