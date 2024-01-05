@@ -18,7 +18,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 #include "JellyfinQt/credentialmanager.h"
-
+#include <QStandardPaths>
+#include <QCoreApplication>
 CredentialsManager * CredentialsManager::newInstance(QObject *parent) {
     return new FallbackCredentialsManager(parent);
 }
@@ -28,7 +29,8 @@ CredentialsManager * CredentialsManager::newInstance(QObject *parent) {
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 FallbackCredentialsManager::FallbackCredentialsManager(QObject *parent)
     : CredentialsManager (parent)
-    , m_settings("Handydev", "Sailfin")
+    , m_settings(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)
+                 + "/" + QCoreApplication::applicationName() + ".auth.conf", QSettings::NativeFormat)
 {
     m_settings.beginGroup("Credentials");
 }

@@ -36,6 +36,8 @@
 #include <QMetaProperty>
 #include <QMetaObject>
 #include <QSettings>
+#include <QStandardPaths>
+#include <QCoreApplication>
 
 namespace Jellyfin {
 class QObjectSettingsWrapperPrivate {
@@ -226,8 +228,10 @@ void QObjectSettingsWrapper::propertyChanged() {
 
 QObjectSettingsWrapperPrivate::QObjectSettingsWrapperPrivate(QObjectSettingsWrapper *parent)
     : q_ptr(parent),
-      m_settings(QSettings("Handydev", "Sailfin")) {
-
+      m_settings(QSettings(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)
+                           + "/" + QCoreApplication::applicationName() + ".app.conf", QSettings::NativeFormat)) {
+    qDebug() << "transcodingSettingsPath: " << QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)
+                + "/" + QCoreApplication::applicationName() + ".app.conf";
 }
 
 void QObjectSettingsWrapperPrivate::resolveProperties(QByteArray scopePath) {
