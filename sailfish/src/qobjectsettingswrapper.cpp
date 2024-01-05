@@ -230,8 +230,6 @@ QObjectSettingsWrapperPrivate::QObjectSettingsWrapperPrivate(QObjectSettingsWrap
     : q_ptr(parent),
       m_settings(QSettings(QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)
                            + "/" + QCoreApplication::applicationName() + ".app.conf", QSettings::NativeFormat)) {
-    qDebug() << "transcodingSettingsPath: " << QStandardPaths::writableLocation(QStandardPaths::AppConfigLocation)
-                + "/" + QCoreApplication::applicationName() + ".app.conf";
 }
 
 void QObjectSettingsWrapperPrivate::resolveProperties(QByteArray scopePath) {
