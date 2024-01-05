@@ -19,6 +19,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 import QtQuick 2.6
 import Sailfish.Silica 1.0
+import ".."
 
 Column {
     property alias imageSource : playImage.source
@@ -29,12 +30,23 @@ Column {
     signal playPressed(bool resume)
     spacing: Theme.paddingLarge
 
+    function getHeaderHeight() {
+        var previewHeight = parent.width / imageAspectRatio
+        if(!Utils.isLandscape(appWindow)) {
+            return previewHeight;
+        }
+        return previewHeight * 0.4;
+    }
+
     BackgroundItem {
         width: parent.width
-        height: width / imageAspectRatio
+        height: getHeaderHeight(parent.width)
         RemoteImage {
             id: playImage
-            anchors.fill: parent
+            anchors.fill: Utils.isLandscape(appWindow) ? undefined : parent
+            width: Utils.isLandscape(appWindow) ? parent.height * imageAspectRatio : undefined
+            height: Utils.isLandscape(appWindow) ? parent.height : undefined
+            anchors.centerIn: parent
             fillMode: Image.PreserveAspectCrop
             clip: true
         }

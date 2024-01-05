@@ -18,6 +18,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
 .pragma library
+.import Sailfish.Silica 1.0 as Silica
 
 /**
  * Converts miliseconds to a h:mm:ss format
@@ -145,3 +146,8 @@ function colorFromString(string) {
     hash = (hash % 16) / 16;
     return Qt.hsva(hash, 1.0, 1.0, 1.0);
 }
+
+function isLandscape(appWindow) {
+    return (appWindow.deviceOrientation & Silica.Orientation.LandscapeMask)
+}
+
