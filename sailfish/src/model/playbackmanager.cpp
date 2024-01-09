@@ -261,9 +261,9 @@ void LocalPlaybackManagerPrivate::requestItemUrl(QSharedPointer<Model::Item> ite
             audioTracks++;
         }
     }
-    if (audioTracks > 1) {
+    /*if (audioTracks > 1) {
         transcodePreferred = true;
-    }
+    }*/
 
     bool forceTranscoding = allowTranscoding && transcodePreferred;
 
@@ -355,7 +355,7 @@ void LocalPlaybackManagerPrivate::handlePlaybackInfoResponse(QString itemId, QSt
                 }
             }
             if (audioTracks > 1) {
-                transcodePreferred = false;
+                // transcodePreferred = false;
             }
         }
 
