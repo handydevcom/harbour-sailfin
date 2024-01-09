@@ -110,7 +110,7 @@ DTO::DeviceProfile DeviceProfile::generateProfile() {
                                     "true", false),
                     createCondition(CondVal::VideoProfile,
                                     Condition::EqualsAny,
-                                    "baseline|constrained baseline", false), //"high|main|baseline|constrained baseline"
+                                    "high|main|baseline|constrained baseline"),
                     createCondition(CondVal::VideoLevel,
                                     Condition::LessThanEqual,
                                     "51", false),
